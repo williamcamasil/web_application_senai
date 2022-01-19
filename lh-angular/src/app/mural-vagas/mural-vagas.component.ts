@@ -19,13 +19,21 @@ export class MuralVagasComponent implements OnInit {
     this.listarVagas();
   }
 
+  //comando para rodar o jsonserver: json-server --watch vagas-db.json
+
   listarVagas() {
     //subscribe, é utilizado para fazer o observable funcionar
     this._vagasService.getVagas()
       .subscribe(
         retornaVaga => {
           this.vagas = retornaVaga.map(item => {
-            return new Vaga();
+            return new Vaga(
+              item.id,
+              item.nome,
+              item.foto,
+              item.descricao,
+              item.salario
+            );
           })
         }
       )

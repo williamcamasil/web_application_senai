@@ -8,7 +8,7 @@ import { Vaga } from './models/Vaga.model';
 })
 export class VagasService {
 
-  private url = "";
+  private url = "http://localhost:3000/vagas";
 
   constructor(private _httpClient: HttpClient) {
 
