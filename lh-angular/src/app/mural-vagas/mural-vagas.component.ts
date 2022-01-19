@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Vaga } from '../models/Vaga.model';
 import { VagasService } from '../vagas.service';
 
@@ -10,8 +11,9 @@ import { VagasService } from '../vagas.service';
 export class MuralVagasComponent implements OnInit {
 
   public vagas: Vaga[] = [];
+  public vaga: Vaga = new Vaga(0, "", "", "", 0);
 
-  constructor(private _vagasService: VagasService) {
+  constructor(private _vagasService: VagasService, private router: Router) {
 
   }
 
@@ -37,6 +39,22 @@ export class MuralVagasComponent implements OnInit {
           })
         }
       )
+  }
+
+  excluir(id: number) {
+    this._vagasService.removerVaga(id)
+      .subscribe(
+        vaga => {
+          this.vaga = new Vaga(0, "", "", "", 0)
+        },err => {
+          console.log("erro ao atualizar")
+        }
+      );
+    window.location.href = "/mural";
+  }
+
+  editar() {
+    this.router.navigateByUrl("/painel");
   }
 
 }

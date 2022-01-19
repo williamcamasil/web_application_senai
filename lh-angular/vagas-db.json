@@ -1,20 +1,6 @@
 {
   "vagas": [
     {
-      "id": 1,
-      "nome": "Desenvolver FrontEnd",
-      "foto": "foto1.jpg",
-      "descricao": "Trabalhar com Angular",
-      "salario": 5000
-    },
-    {
-      "id": 2,
-      "nome": "Desenvolver BackEnd Pleno",
-      "foto": "foto2.jpg",
-      "descricao": "Trabalhar com Spring Boot",
-      "salario": 7000
-    },
-    {
       "id": 3,
       "nome": "Desenvolver Fullstack Senior",
       "foto": "foto3.jpg",
@@ -22,11 +8,18 @@
       "salario": 10000
     },
     {
-      "id": "4",
+      "id": 4,
       "nome": "Teste",
       "foto": "foto1.jpg",
       "descricao": "asdasd",
       "salario": "15"
+    },
+    {
+      "id": 6,
+      "nome": "dsffsdfdsf",
+      "foto": "foto1.jpg",
+      "descricao": "sdgdfgds",
+      "salario": 546465456
     }
   ]
 }

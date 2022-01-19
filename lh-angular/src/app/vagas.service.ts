@@ -23,12 +23,12 @@ export class VagasService {
     return this._httpClient.post<Vaga[]>(this.url, vaga);
   }
 
-  atualizarVaga(id: any, vaga: Vaga):Observable<Vaga[]> {
+  atualizarVaga(id: number, vaga: Vaga):Observable<Vaga[]> {
     const urlAtualizar = `${this.url}/${id}`;
     return this._httpClient.put<Vaga[]>(urlAtualizar, vaga);
   }
 
-  removerVaga(id: any):Observable<Vaga[]> {
+  removerVaga(id: number):Observable<Vaga[]> {
     const urlDeletar = `${this.url}/${id}`;
     return this._httpClient.delete<Vaga[]>(urlDeletar);
   }

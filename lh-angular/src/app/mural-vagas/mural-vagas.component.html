@@ -8,6 +8,8 @@
         <p class="card-text">Descrição da Vaga: {{vaga.descricao}}</p>
         <p class="card-text">Salário: R${{vaga.salario}}</p>
       </div>
+      <button type="button" (click)="excluir(vaga.id)">Excluir</button>
+      <button type="button" (click)="editar()">Editar</button>
     </div>
   </div>
 </section>

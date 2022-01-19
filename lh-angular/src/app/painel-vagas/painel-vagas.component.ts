@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Vaga } from '../models/Vaga.model';
 import { VagasService } from '../vagas.service';
 
@@ -11,7 +12,7 @@ export class PainelVagasComponent implements OnInit {
 
   public vaga: Vaga = new Vaga(0, "", "", "", 0);
 
-  constructor(private _vagasService: VagasService) { }
+  constructor(private _vagasService: VagasService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -25,7 +26,7 @@ export class PainelVagasComponent implements OnInit {
           console.log("erro ao cadastrar")
         }
       );
-      window.location.href = "/mural";
+      this.router.navigateByUrl("/mural");
   }
 
   atualizar(id: number) {
@@ -37,19 +38,6 @@ export class PainelVagasComponent implements OnInit {
           console.log("erro ao atualizar")
         }
       );
-      window.location.href = "/mural";
+      this.router.navigateByUrl("/mural");
   }
-
-  excluir(id: number) {
-    this._vagasService.removerVaga(id)
-      .subscribe(
-        vaga => {
-          this.vaga = new Vaga(0, "", "", "", 0)
-        },err => {
-          console.log("erro ao atualizar")
-        }
-      );
-      window.location.href = "/mural";
-  }
-
 }
