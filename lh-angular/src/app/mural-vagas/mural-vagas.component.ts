@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Vaga } from '../models/Vaga.model';
+import { VagasService } from '../vagas.service';
 
 @Component({
   selector: 'app-mural-vagas',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MuralVagasComponent implements OnInit {
 
-  constructor() { }
+  public vagas: Vaga[] = [];
+
+  constructor(private _vagasService: VagasService) {
+
+  }
 
   ngOnInit(): void {
+    this.listarVagas();
+  }
+
+  listarVagas() {
+    //subscribe, é utilizado para fazer o observable funcionar
+    this._vagasService.getVagas()
+      .subscribe(
+        retornaVaga => {
+          this.vagas = retornaVaga.map(item => {
+            return new Vaga();
+          })
+        }
+      )
   }
 
 }
