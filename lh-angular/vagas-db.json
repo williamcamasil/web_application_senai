@@ -1,21 +1,21 @@
 {
   "vagas": [
     {
-      "id": 3,
+      "id": 1,
       "nome": "Desenvolver Fullstack Senior",
       "foto": "foto3.jpg",
       "descricao": "Trabalhar com Angular e Spring",
       "salario": 10000
     },
     {
-      "id": 4,
+      "id": 2,
       "nome": "Teste",
       "foto": "foto1.jpg",
       "descricao": "asdasd",
       "salario": "15"
     },
     {
-      "id": 6,
+      "id": 3,
       "nome": "dsffsdfdsf",
       "foto": "foto1.jpg",
       "descricao": "sdgdfgds",

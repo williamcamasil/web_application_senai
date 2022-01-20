@@ -47,9 +47,10 @@ export class MuralVagasComponent implements OnInit {
         vaga => {
           this.vaga = new Vaga(0, "", "", "", 0)
         },err => {
-          console.log("erro ao atualizar")
+          alert("erro ao atualizar, tente novamente mais tarde")
         }
       );
+      alert("Vaga excluída com sucesso!");
     window.location.href = "/mural";
   }
 

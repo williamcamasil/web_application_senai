@@ -1,0 +1,26 @@
+.container-menu {
+  background-color: #092327;
+  padding: 0px 40px;
+}
+
+.nav {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-access {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-link {
+  color: #fff;
+  font-size: 25px;
+}
+
+.nav-link:hover {
+  color: #B5BD89;
+}

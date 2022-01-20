@@ -18,26 +18,36 @@ export class PainelVagasComponent implements OnInit {
   }
 
   cadastrar() {
-    this._vagasService.cadastrarVaga(this.vaga)
-      .subscribe(
-        vaga => {
-          this.vaga = new Vaga(0, "", "", "", 0)
-        },err => {
-          console.log("erro ao cadastrar")
-        }
-      );
-      this.router.navigateByUrl("/mural");
+    if(this.vaga.id !== 0 && this.vaga.nome !== "" && this.vaga.foto !== "" && this.vaga.descricao !== "" && this.vaga.salario !== 0) {
+      this._vagasService.cadastrarVaga(this.vaga)
+        .subscribe(
+          vaga => {
+            this.vaga = new Vaga(0, "", "", "", 0);
+          },err => {
+            alert("erro ao cadastrar, tente novamente mais tarde");
+          }
+        );
+        alert("Vaga cadastrada com sucesso!");
+        this.router.navigateByUrl("/mural");
+    } else {
+      alert("Preencha todos os campos");
+    }
   }
 
   atualizar(id: number) {
-    this._vagasService.atualizarVaga(id, this.vaga)
-      .subscribe(
-        vaga => {
-          this.vaga = new Vaga(0, "", "", "", 0)
-        },err => {
-          console.log("erro ao atualizar")
-        }
-      );
-      this.router.navigateByUrl("/mural");
+    if(this.vaga.id !== 0 && this.vaga.nome !== "" && this.vaga.foto !== "" && this.vaga.descricao !== "" && this.vaga.salario !== 0) {
+      this._vagasService.atualizarVaga(id, this.vaga)
+        .subscribe(
+          vaga => {
+            this.vaga = new Vaga(0, "", "", "", 0);
+          },err => {
+            alert("erro ao atualizar, tente novamente mais tarde");
+          }
+        );
+        alert("Atualização realizada com sucesso!");
+        this.router.navigateByUrl("/mural");
+    } else {
+      alert("Preencha todos os campos");
+    }
   }
 }

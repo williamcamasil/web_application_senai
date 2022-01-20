@@ -1,9 +1,50 @@
 .lista-vagas {
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  padding: 175px 0px;
+}
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 80px ;
+  background-color: #729EA1;
+  width: 100%;
+  margin: auto;
+  border-radius: 15px;
+  justify-content: space-between;
+  max-width: 1600px;
+  min-height: 870px;
+  min-width: 900px;
 }
 
 .lista-vagas .card {
   margin: 5px 10px;
-  min-height: 500px;
+  min-height: 700px;
+}
+
+.card {
+  background-color: #DFBE99;
+  padding: 40px;
+  border-radius: 10px;
+  width: 25rem;
+}
+
+.card-img-top {
+  height: 140px;
+  border-radius: 10px;
+}
+
+button {
+  background-color: #DB5375;
+  padding: 20px;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 5px;
+  font-size: 23px;
+}
+
+button:hover {
+  background-color: #729EA1;
 }
